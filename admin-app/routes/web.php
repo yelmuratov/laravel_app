@@ -39,3 +39,11 @@ Route::get('/fixed-sidebar', function () {
 Route::get('/fixed-sidebar-custom', function () {
     return view('layout/fixed-sidebar-custom');
 });
+
+Route::get('/fixed-topnav', function () {
+    return view('layout/fixed-topnav');
+});
+
+Route::get('/fixed-footer', function () {
+    return view('layout/fixed-footer');
+});
