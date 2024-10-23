@@ -8,6 +8,12 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    public function index(){
+        $users = User::all();
+
+        return view('admin.user.index', ['users' => $users]);
+    }
+
     public function create(Request $request){
         $request->validate([
             'name'=>'required|string|max:255',
@@ -45,5 +51,10 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->back()->with('success', 'User deleted successfully');
+    }
+
+    public function show($id){
+        $user = User::find($id);
+        return view('admin.user.show', ['user' => $user]);
     }
 }

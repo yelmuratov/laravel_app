@@ -1,9 +1,3 @@
-@php
-    use App\Models\Post;
-
-    $users = Post::all()->toArray();
-@endphp
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +26,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../..//admin" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -218,7 +212,6 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -230,7 +223,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">DataTables</li>
             </ol>
           </div>
@@ -244,37 +237,35 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header">
+              <div class="card-header bg-primary text-white">
                 <h3 class="card-title">DataTable with minimal features & hover style</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
+                <table id="example2" class="table table-bordered table-hover table-striped">
+                  <thead class="bg-secondary text-white">
                   <tr>
-                  <th>ID</th>
-                  <th>TITLE</th>
-                  <th>CONTENT</th>
-                  <th>LIKES</th>
-                  <th>DISLIKES</th>
-                  <th>ACTION</th>
+                    <th>ID</th>
+                    <th>POST ID</th>
+                    <th>USER ID</th>
+                    <th>CONTENT</th>
+                    <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach ($users as $user)
-                    <tr>
-                      <td>{{ $user['id'] }}</td>
-                      <td>{{ $user['title'] }}</td>
-                      <td>{{ $user['content'] }}</td>
-                      <td>{{ $user['likes'] }}</td>
-                      <td>{{ $user['dislikes'] }}</td>
-                      <td>
-                      <a href="/showPost/{{ $user['id'] }}" class="btn btn-success btn-sm m-1">Show</a>
-                      <a href="/updatePost/{{ $user['id'] }}" class="btn btn-primary btn-sm m-1">Edit</a>
-                      <a href="/deletePost/{{ $user['id'] }}/delete" class="btn btn-danger btn-sm m-1">Delete</a>
-                      </td>
-                    </tr>
-                  @endforeach
+                    @foreach ($comments as $comment)
+                        <tr>
+                          <td>{{ $comment['id'] }}</td>
+                          <td>{{ $comment['post_id'] }}</td>
+                          <td>{{ $comment['user_id'] }}</td>
+                          <td>{{ $comment['content'] }}</td>
+                          <td>
+                            <a href="/showComment/{{ $comment['id'] }}" class="btn btn-success btn-sm">Show</a>
+                            <a href="/updateComment/{{ $comment['id'] }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="/deleteComment/{{ $comment['id'] }}" class="btn btn-danger btn-sm">Delete</a>
+                          </td>
+                        </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

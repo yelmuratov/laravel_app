@@ -6,6 +6,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\OrderController;
+
 
 Route::get('/', function () {
     return view('user.index');
@@ -104,12 +109,29 @@ Route::get('/admin/forms',[AdminController::class,'forms']);
 Route::post('/register',[UserController::class,'create']);
 Route::post('/updateUser/{id}',[UserController::class,'update']);
 Route::get('/deleteUser/{id}',[UserController::class,'delete']);
+Route::get('showUser/{id}',[UserController::class,'show']);
 
 Route::post('/createProduct',[ProductController::class,'create']);
 Route::post('/updateProduct/{id}',[ProductController::class,'update']);
 Route::get('/deleteProduct/{id}',[ProductController::class,'delete']);
+Route::get('showProduct/{id}',[ProductController::class,'show']);
 
 Route::post('/createPost',[PostController::class,'create']);
 Route::post('/updatePost/{id}',[PostController::class,'update']);
 Route::get('/deletePost/{id}',[PostController::class,'delete']);
+Route::get('showPost/{id}',[PostController::class,'show']);
+
+Route::get('/admin/categories',[AdminController::class,'Categories']);
+Route::get('/admin/comments',[AdminController::class,'Comments']);
+Route::get('/admin/likes',[AdminController::class,'Likes']);
+Route::get('/admin/orders',[AdminController::class,'Orders']);
+Route::get('/showOrder/{id}',[AdminController::class,'show']);
+Route::get('/deleteCategory/{id}',[CategoryController::class,'delete']);
+Route::get('/showCategory/{id}',[CategoryController::class,'show']);
+
+Route::get('/showComment/{id}',[CommentController::class,'show']);
+
+
+
+
 

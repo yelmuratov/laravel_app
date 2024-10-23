@@ -37,7 +37,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/admin" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -176,26 +176,50 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Tables Section -->
           <li class="nav-item">
+            <a href="/admin/categories" class="nav-link">
+              <i class="nav-icon fas fa-tags"></i>
+              <p>Categories</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/product" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-box-open"></i>
               <p>Products</p>
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/orders" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>Orders</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/comments" class="nav-link">
+              <i class="nav-icon fas fa-comment-dots"></i>
+              <p>Comments</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/likes" class="nav-link">
+              <i class="nav-icon fas fa-thumbs-up"></i>
+              <p>Likes</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/data" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-user-friends"></i>
               <p>Users</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="/admin/posts" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-pencil-alt"></i>
               <p>Posts</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="/admin/forms" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-file-alt"></i>
               <p>Forms</p>
             </a>
           </li>
