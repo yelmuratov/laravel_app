@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('user.index');
@@ -86,19 +88,15 @@ Route::get('/about',function(){
     return view('user.about');
 });
 
-Route::get('/admin',function(){
-    return view('admin.index');
-});
+Route::get('/admin',[AdminController::class,'index']);
 
-Route::get('/admin/data',function(){
-    return view('admin.pages.tables.data');
-});
+Route::get('/admin/data',[AdminController::class,'Users']);
 
-Route::get('/admin/product',function(){
-    return view('admin.pages.tables.simple');
-});
+Route::get('/admin/product',[AdminController::class,'Products']);
 
-Route::get('/admin/posts',function(){
-    return view('admin.pages.tables.jsgrid');
-});
+Route::get('/admin/posts',[AdminController::class,'Posts']);
+
+Route::get('/admin/forms',[AdminController::class,'forms']);
+
+Route::post('/register',[AuthController::class,'register']);
 

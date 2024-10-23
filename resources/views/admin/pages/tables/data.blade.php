@@ -1,9 +1,3 @@
-@php
-    use App\Models\User;
-
-    $users = User::all()->toArray();
-@endphp
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -917,33 +911,28 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Tables Section -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/product" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
-              </p>
+              <p>Products</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/admin/product" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Products</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/admin/data" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/admin/posts" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Posts</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/data" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Users</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/posts" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>Posts</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/forms" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>Forms</p>
+            </a>
           </li>
         </ul>
       </nav>
