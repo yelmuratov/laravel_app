@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('user.index');
@@ -98,5 +101,15 @@ Route::get('/admin/posts',[AdminController::class,'Posts']);
 
 Route::get('/admin/forms',[AdminController::class,'forms']);
 
-Route::post('/register',[AuthController::class,'register']);
+Route::post('/register',[UserController::class,'create']);
+Route::post('/updateUser/{id}',[UserController::class,'update']);
+Route::get('/deleteUser/{id}',[UserController::class,'delete']);
+
+Route::post('/createProduct',[ProductController::class,'create']);
+Route::post('/updateProduct/{id}',[ProductController::class,'update']);
+Route::get('/deleteProduct/{id}',[ProductController::class,'delete']);
+
+Route::post('/createPost',[PostController::class,'create']);
+Route::post('/updatePost/{id}',[PostController::class,'update']);
+Route::get('/deletePost/{id}',[PostController::class,'delete']);
 

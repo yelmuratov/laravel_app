@@ -875,6 +875,7 @@
                     <th>PRICE</th>
                     <th>COUNT</th>
                     <th>IMAGE</th>
+                    <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -885,6 +886,10 @@
                           <td>{{ $user['price'] }}</td>
                           <td>{{ $user['count'] }}</td>
                           <td>{{ $user['image'] }}</td>
+                          <td>
+                            <a href="/updateUser/{{ $user['id'] }}" class="btn btn-primary">Edit</a>
+                            <a href="/deleteUser/{{ $user['id'] }}/delete" class="btn btn-danger">Delete</a>
+                          </td>
                         </tr>
                     @endforeach
                   </tbody>

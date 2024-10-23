@@ -830,7 +830,6 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -868,6 +867,7 @@
                     <th>NAME</th>
                     <th>EMAIL</th>
                     <th>CREATED AT</th>
+                    <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -877,6 +877,10 @@
                           <td>{{ $user['name'] }}</td>
                           <td>{{ $user['email'] }}</td>
                           <td>{{ $user['created_at'] }}</td>
+                          <td>
+                            <a href="/updateUser/{{ $user['id'] }}" class="btn btn-primary">Edit</a>
+                            <a href="/deleteUser/{{ $user['id'] }}" class="btn btn-danger">Delete</a>
+                          </td>
                         </tr>
                     @endforeach
                   </tbody>
