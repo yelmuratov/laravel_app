@@ -306,7 +306,7 @@
                                                             class="btn btn-success">Show</a>
                                                         <a href="/updateProduct/{{ $user['id'] }}"
                                                             class="btn btn-primary">Edit</a>
-                                                        <a href="/deleteProduct/{{ $user['id'] }}/delete"
+                                                        <a href="/deleteProduct/{{ $user['id'] }}"
                                                             class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>

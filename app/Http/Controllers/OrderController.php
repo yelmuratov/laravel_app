@@ -8,6 +8,9 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
+    public function createNew(){
+        return view('admin.Order.create');
+    }
     //crue wirh show method
     public function create(Request $request){
         $request->validate([
@@ -20,10 +23,7 @@ class OrderController extends Controller
         $data = $request->all();
         $order = Order::create($data);
         $order->save();
-        return response()->json([
-            'message' => 'Order created',
-            'order' => $order
-        ]);
+        return redirect()->back()->with('success', 'Order created successfully');
     }
 
     public function show($id){
@@ -63,9 +63,7 @@ class OrderController extends Controller
         $order = Order::find($id);
         if($order){
             $order->delete();
-            return response()->json([
-                'message' => 'Order deleted'
-            ]);
+            return redirect()->back()->with('success', 'Order deleted successfully');
         }else{
             return response()->json([
                 'message' => 'Order not found'

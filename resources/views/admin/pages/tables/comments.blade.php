@@ -237,8 +237,11 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header bg-primary text-white">
+              <div class="card-header">
                 <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <a href="/createNewComment" type="button" class="btn btn-primary float-right">
+                  Create New Comment
+                </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

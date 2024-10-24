@@ -8,19 +8,25 @@ use App\Models\Like;
 
 class LikeController extends Controller
 {
-    public function create(Request $request){
-        $request->validate([
-            'product_id' => 'required',
-            'user_id' => 'required',
-        ]);
+    public function createNew(){
+        $likes = Like::all();
+        return view('admin.Like.create',['likes' => $likes]);
+    }
 
-        $data = $request->all();
-        $like = Like::create($data);
-        $like->save();
-        return response()->json([
-            'message' => 'Like created',
-            'like' => $like
-        ]);
+    public function create(Request $request){
+        try{
+            $request->validate([
+                'product_id' => 'required',
+                'user_id' => 'required',
+                'like' => 'required',
+            ]);
+    
+            Like::create($request->all());
+            Like::save();
+            return redirect('/admin/likes')->with('success', 'Like created successfully');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     public function show($id){

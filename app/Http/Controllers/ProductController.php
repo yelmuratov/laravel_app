@@ -10,38 +10,29 @@ use App\Models\Category;
 class ProductController extends Controller
 {
     public function create(Request $request)
-{
-    try {
+    {
         $request->validate([
-            'category_id' => 'required|exists:categories,id',
+            'category_id' => 'required',
             'name' => 'required|string|max:255',
             'description' => 'required|string',
+            'count' => 'required|numeric',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'price' => 'required|numeric',
-            'count' => 'required|integer',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Image validation
         ]);
 
-        $productData = [
+        $product = new Product([
             'category_id' => $request->category_id,
             'name' => $request->name,
             'description' => $request->description,
-            'price' => $request->price,
             'count' => $request->count,
-        ];
+            'image' => $request->image,
+            'price' => $request->price,
+        ]);
 
-        if ($request->hasFile('image')) {
-            // Store the image and get the path
-            $imagePath = $request->file('image')->store('images/products', 'public');
-            $productData['image'] = $imagePath; // Save the image path
-        }
+        $product->save();
 
-        Product::create($productData);
-
-        return redirect('/admin/products')->with('success', 'Product created successfully');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Error creating product: ' . $e->getMessage());
+        return redirect('/admin/product')->with('success', 'Product created successfully');
     }
-}
 
 
     public function createNew(){

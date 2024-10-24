@@ -130,9 +130,15 @@ Route::get('showCategory/{id}',[CategoryController::class,'show']);
 
 Route::get('/admin/likes',[AdminController::class,'Likes']);
 Route::get('/showLike/{id}',[LikeController::class,'show']);
+Route::get('/deleteLike/{id}',[LikeController::class,'delete']);
+Route::get('/createNewLike',[LikeController::class,'createNew']);
+Route::post('/createLike',[LikeController::class,'create']);
 
 Route::get('/admin/orders',[AdminController::class,'Orders']);
 Route::get('/showOrder/{id}',[OrderController::class,'show']);
+Route::get('/deleteOrder/{id}',[OrderController::class,'delete']);
+Route::get('/createNewOrder',[OrderController::class,'createNew']);
+Route::post('/createOrder',[OrderController::class,'create']);
 
 
 Route::get('/deleteCategory/{id}',[CategoryController::class,'delete']);
@@ -142,6 +148,8 @@ Route::get('/showCategory/{id}',[CategoryController::class,'show']);
 Route::get('/admin/comments',[AdminController::class,'Comments']);
 Route::get('/showComment/{id}',[CommentController::class,'show']);
 Route::get('/deleteComment/{id}',[CommentController::class,'delete']);
+Route::get('/createNewComment',[CommentController::class,'createNew']);
+Route::post('/createComment',[CommentController::class,'create']);
 
 
 

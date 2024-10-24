@@ -172,6 +172,16 @@
                                             @enderror
                                         </div>
 
+                                        <div class="form-group">
+                                            <label for="productCount">Count</label>
+                                            <input type="number" class="form-control @error('count') is-invalid @enderror" id="productCount" name="count" placeholder="Enter product count" value="{{ old('count') }}" required>
+                                            @error('count')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+
                                         <button type="submit" class="btn btn-primary">Save Product</button>
                                         <a href="/admin/product" class="btn btn-secondary">Back to Products</a>
                                     </form>

@@ -8,6 +8,11 @@ use App\Models\Comment;
 
 class CommentController extends Controller
 {
+
+    public function createNew(){
+        return view('admin.Comment.create');
+    }
+
     public function create(Request $request){
         $request->validate([
             'post_id'=>'required',
@@ -23,7 +28,7 @@ class CommentController extends Controller
 
         $comment->save();
 
-        return redirect()->back()->with('success', 'Comment created successfully');
+        return redirect('/admin/comments')->with('success', 'Comment created successfully');
     }
 
     public function update(Request $request, $id){
