@@ -239,6 +239,9 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <a href="/createNewUser" type="button" class="btn btn-primary float-right">
+                  Create New User
+                </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

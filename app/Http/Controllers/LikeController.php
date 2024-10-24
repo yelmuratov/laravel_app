@@ -16,13 +16,14 @@ class LikeController extends Controller
     public function create(Request $request){
         try{
             $request->validate([
-                'product_id' => 'required',
+                'post_id' => 'required',
                 'user_id' => 'required',
                 'like' => 'required',
             ]);
     
-            Like::create($request->all());
-            Like::save();
+            $data = $request->all();
+            $like = Like::create($data);
+            $like->save();
             return redirect('/admin/likes')->with('success', 'Like created successfully');
         }catch(\Exception $e){
             dd($e);
@@ -64,9 +65,7 @@ class LikeController extends Controller
         $like = Like::find($id);
         if($like){
             $like->delete();
-            return response()->json([
-                'message' => 'Like deleted'
-            ]);
+            return redirect()->back()->with('success', 'Like deleted successfully');
         }else{
             return response()->json([
                 'message' => 'Like not found'

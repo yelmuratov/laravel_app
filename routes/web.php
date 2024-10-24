@@ -110,6 +110,7 @@ Route::post('/register',[UserController::class,'create']);
 Route::post('/updateUser/{id}',[UserController::class,'update']);
 Route::get('/deleteUser/{id}',[UserController::class,'delete']);
 Route::get('showUser/{id}',[UserController::class,'show']);
+Route::get('/createNewUser',[UserController::class,'createNew']);
 
 Route::get('/createNewProduct',[ProductController::class,'createNew']);
 Route::post('/createProduct',[ProductController::class,'create']);
@@ -121,6 +122,7 @@ Route::post('/createPost',[PostController::class,'create']);
 Route::post('/updatePost/{id}',[PostController::class,'update']);
 Route::get('/deletePost/{id}',[PostController::class,'delete']);
 Route::get('showPost/{id}',[PostController::class,'show']);
+Route::get('/createNewPost',[PostController::class,'createNew']);
 
 Route::get('/admin/categories',[AdminController::class,'Categories']);
 Route::post('/createCategory',[CategoryController::class,'create']);

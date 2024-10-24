@@ -36,13 +36,46 @@
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Sidebar -->
     <div class="sidebar">
+      <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Tables Section -->
           <li class="nav-item">
-            <a href="/admin/comments" class="nav-link active">
+            <a href="/admin/categories" class="nav-link">
+              <i class="nav-icon fas fa-tags"></i>
+              <p>Categories</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/product" class="nav-link">
+              <i class="nav-icon fas fa-box-open"></i>
+              <p>Products</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/orders" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>Orders</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/comments" class="nav-link">
               <i class="nav-icon fas fa-comment-dots"></i>
               <p>Comments</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/likes" class="nav-link">
+              <i class="nav-icon fas fa-thumbs-up"></i>
+              <p>Likes</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/data" class="nav-link">
+              <i class="nav-icon fas fa-user-friends"></i>
+              <p>Users</p>
             </a>
           </li>
           <li class="nav-item">
@@ -53,7 +86,9 @@
           </li>
         </ul>
       </nav>
+      <!-- /.sidebar-menu -->
     </div>
+    <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->

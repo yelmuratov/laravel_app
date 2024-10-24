@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 class UserController extends Controller
-{
+{   
     public function index(){
         $users = User::all();
 
         return view('admin.user.index', ['users' => $users]);
+    }
+
+    public function createNew(){
+        return view('admin.user.create');
     }
 
     public function create(Request $request){
@@ -29,7 +33,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with('success', 'User created successfully');
+        return redirect('/admin/data')->with('success', 'User created successfully');
     }
 
     public function update(Request $request, $id){

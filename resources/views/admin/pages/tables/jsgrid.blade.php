@@ -246,6 +246,9 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <a href="/createNewPost" type="button" class="btn btn-primary float-right">
+                  Create New Post
+                </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -271,7 +274,7 @@
                       <td>
                       <a href="/showPost/{{ $user['id'] }}" class="btn btn-success btn-sm m-1">Show</a>
                       <a href="/updatePost/{{ $user['id'] }}" class="btn btn-primary btn-sm m-1">Edit</a>
-                      <a href="/deletePost/{{ $user['id'] }}/delete" class="btn btn-danger btn-sm m-1">Delete</a>
+                      <a href="/deletePost/{{ $user['id']}}" class="btn btn-danger btn-sm m-1">Delete</a>
                       </td>
                     </tr>
                   @endforeach
