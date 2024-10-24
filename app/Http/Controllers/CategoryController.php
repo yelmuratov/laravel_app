@@ -11,8 +11,7 @@ class CategoryController extends Controller
     //create methods post method post
     public function create(Request $request){
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
+            'name' => 'required|string|max:255',
         ]);
 
         $data = $request->all();

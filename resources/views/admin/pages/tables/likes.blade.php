@@ -260,9 +260,9 @@
                           <td>{{ $like['user_id'] }}</td>
                           <td>{{ $like['like'] }}</td>
                           <td>
-                            <a href="/showUser/{{ $like['id'] }}" class="btn btn-success">Show</a>
-                            <a href="/updateUser/{{ $like['id'] }}" class="btn btn-primary">Edit</a>
-                            <a href="/deleteUser/{{ $like['id'] }}" class="btn btn-danger">Delete</a>
+                            <a href="/showLike/{{ $like['id'] }}" class="btn btn-success">Show</a>
+                            <a href="/updateLike/{{ $like['id'] }}" class="btn btn-primary">Edit</a>
+                            <a href="/deleteLike/{{ $like['id'] }}" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>
                     @endforeach

@@ -111,6 +111,7 @@ Route::post('/updateUser/{id}',[UserController::class,'update']);
 Route::get('/deleteUser/{id}',[UserController::class,'delete']);
 Route::get('showUser/{id}',[UserController::class,'show']);
 
+Route::get('/createNewProduct',[ProductController::class,'createNew']);
 Route::post('/createProduct',[ProductController::class,'create']);
 Route::post('/updateProduct/{id}',[ProductController::class,'update']);
 Route::get('/deleteProduct/{id}',[ProductController::class,'delete']);
@@ -122,14 +123,25 @@ Route::get('/deletePost/{id}',[PostController::class,'delete']);
 Route::get('showPost/{id}',[PostController::class,'show']);
 
 Route::get('/admin/categories',[AdminController::class,'Categories']);
-Route::get('/admin/comments',[AdminController::class,'Comments']);
+Route::post('/createCategory',[CategoryController::class,'create']);
+Route::post('/updateCategory/{id}',[CategoryController::class,'update']);
+Route::get('/deleteCategory/{id}',[CategoryController::class,'delete']);
+Route::get('showCategory/{id}',[CategoryController::class,'show']);
+
 Route::get('/admin/likes',[AdminController::class,'Likes']);
+Route::get('/showLike/{id}',[LikeController::class,'show']);
+
 Route::get('/admin/orders',[AdminController::class,'Orders']);
-Route::get('/showOrder/{id}',[AdminController::class,'show']);
+Route::get('/showOrder/{id}',[OrderController::class,'show']);
+
+
 Route::get('/deleteCategory/{id}',[CategoryController::class,'delete']);
 Route::get('/showCategory/{id}',[CategoryController::class,'show']);
 
+
+Route::get('/admin/comments',[AdminController::class,'Comments']);
 Route::get('/showComment/{id}',[CommentController::class,'show']);
+Route::get('/deleteComment/{id}',[CommentController::class,'delete']);
 
 
 

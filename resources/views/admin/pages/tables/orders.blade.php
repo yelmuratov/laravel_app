@@ -268,9 +268,9 @@
                           <td>{{ $order['count'] }}</td>
                           <td>{{ $order['total_price'] }}$</td>
                           <td>
-                            <a href="/showUser/{{ $order['id'] }}" class="btn btn-success">Show</a>
-                            <a href="/updateUser/{{ $order['id'] }}" class="btn btn-primary">Edit</a>
-                            <a href="/deleteUser/{{ $order['id'] }}" class="btn btn-danger">Delete</a>
+                            <a href="/showOrder/{{ $order['id'] }}" class="btn btn-success">Show</a>
+                            <a href="/updateOrder/{{ $order['id'] }}" class="btn btn-primary">Edit</a>
+                            <a href="/deleteOrder/{{ $order['id'] }}" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>
                     @endforeach

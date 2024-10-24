@@ -48,4 +48,15 @@ class PostController extends Controller
 
         return redirect('/admin/posts')->with('success', 'Post deleted successfully');
     }
+
+    public function show($id){
+        $post = Post::find($id);
+        if($post){
+            return view('admin.Post.show', ['post' => $post]);
+        }else{
+            return response()->json([
+                'message' => 'Post not found'
+            ]);
+        }
+    }
 }
